@@ -1,0 +1,15 @@
+# Decision Companion — dependencies
+# AI & LLM
+pydantic>=2.0
+langchain-groq>=0.2
+langchain-core>=0.3
+langgraph>=0.2
+# RAG (ChromaDB, PDF load, text split, local embeddings)
+chromadb>=0.4
+pypdf>=4.0
+langchain-community>=0.3
+langchain-text-splitters>=0.3
+sentence-transformers>=3.0
+# Frontend (Streamlit)
+streamlit>=1.28
+pandas>=2.0
