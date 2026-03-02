@@ -4,6 +4,15 @@ Run: streamlit run streamlit_app.py
 """
 from __future__ import annotations
 
+# Streamlit Community Cloud ships an older SQLite; ChromaDB needs >= 3.35.
+# Swap in the bundled pysqlite3 before anything imports chromadb.
+try:
+    __import__("pysqlite3")
+    import sys
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except ImportError:
+    pass
+
 import logging
 import os
 from typing import Any, Dict, List, Tuple
